@@ -24,6 +24,7 @@ const server = app.listen(port, () => {
 server.on('error', (err) => {
     if (err.code === 'EADDRINUSE') {
         console.error(`Port ${port} is already in use`);
+        console.error(`Port ${process.env} is already in use`);
         process.exit(1);
     } else {
         throw err;
